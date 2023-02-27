@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Search Results{% endblock %} {% block
+content %}
+<h1 align="center">Search Results...</h1>
+<br />
+{% for user in users%}
+
+<li>
+  <a href="{{url_for('views.profile', username=user.username)}}"
+    >{{user.username}}</a
+  >
+  {%if user != current_user%} {%if user not in current_user.followed.all()%}
+  <a href="/follow/{{user.username}}"
+    ><button type="button" class="btn btn-primary">Follow</button></a
+  >
+  {%elif user in current_user.followed.all()%}
+  <div class="btn-group">
+    <button
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      data-bs-toggle="dropdown"
+    >
+      Following
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="/unfollow/{{user.username}}" class="dropdown-item">Unfollow</a>
+      </li>
+    </ul>
+  </div>
+  {%endif%} {%endif%}
+  <br /><br />
+</li>
+
+{%endfor%} {%if not users%}
+<h2>No users found</h2>
+{%endif%} {% endblock %}

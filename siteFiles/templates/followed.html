@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}{{username}} Follows{% endblock %} {%
+block content %}
+<h1 align="center">{{username}} Follows:</h1>
+<ol>
+  {%for user in user.followed.all()%}
+  <li>
+    <a href="{{url_for('views.profile', username=user.username)}}"
+      >{{user.username}}</a
+    >
+    {%if user != current_user%} {%if user in current_user.followed.all()%}
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        data-bs-toggle="dropdown"
+      >
+        Following
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/unfollow/{{user.username}}" class="dropdown-item"
+            >Unfollow</a
+          >
+        </li>
+      </ul>
+    </div>
+    {%elif user not in current_user.followed.all()%}
+    <a href="/follow/{{user.username}}"
+      ><button type="button" class="btn btn-primary">Follow</button></a
+    >
+    {%endif%} {%endif%}
+    <br /><br />
+  </li>
+  {%endfor%}
+</ol>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+.authform {
+  width: 50%;
+  display: inline-block;
+  justify-content: left;
+  text-align: left;
+  margin-left: 25%;
+}
+
+.authformdiv {
+  margin-top: 8%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.nav-link {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+#title {
+  width: 100%;
+  padding: 0.6%;
+}
+
+#blogTitle {
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  font-size: larger;
+}
+
+.likess {
+  position: relative;
+}
+
+#foll {
+  margin-left: 20px;
+}
+
+.blogImage {
+  max-width: 500px;
+  max-height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#noPosts {
+  margin-top: 15%;
+  text-align: center;
+}

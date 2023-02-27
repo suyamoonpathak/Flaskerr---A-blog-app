@@ -1,0 +1,49 @@
+{% extends "messages.html" %} {% block content %}
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded authformdiv">
+  <form method="POST" class="authform">
+    <h3 align="center">Sign Up</h3>
+    <br /><br />
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        placeholder="Enter Email"
+      /><br />
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        placeholder="Enter Username"
+      /><br />
+      <label for="pwd">Password</label>
+      <input
+        type="password"
+        id="pwd"
+        name="pwd"
+        class="form-control"
+        placeholder="Enter Password"
+      /><br />
+      <label for="pwdConfirm">Password Again</label>
+      <input
+        type="password"
+        id="pwdConfirm"
+        name="pwdConfirm"
+        class="form-control"
+        placeholder="Enter Password Again"
+      /><br />
+
+      <div align="center">
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+      </div>
+      <br />
+      <p>Already got an account? Sign in <a href="login">here</a></p>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
