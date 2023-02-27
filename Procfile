@@ -1,1 +1,1 @@
-web: gunicorn app:siteFiles
+web: gunicorn BlogApp:siteFiles
