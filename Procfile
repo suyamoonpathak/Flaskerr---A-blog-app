@@ -1,1 +1,1 @@
-web: gunicorn siteFiles:my_app
+web: gunicorn my_app:siteFiles
